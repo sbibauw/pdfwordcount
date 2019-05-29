@@ -1,0 +1,2 @@
+#!/bin/bash
+pdftotext -enc UTF-8 "$1" - | recode utf8..us -fq | tr -d "()[]\`\"" | tr " " "\n" | grep "^[A-Za-z]" | wc -w
