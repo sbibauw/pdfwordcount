@@ -10,7 +10,7 @@ Use the [Homebrew](https://brew.sh/) package manager to install in one line:
 
 ```bash
 brew tap sbibauw/utils
-brew install --HEAD pdfwordcount
+brew install pdfwordcount
 ```
 
 ### Manual installation
@@ -41,7 +41,3 @@ pdfwordcount File.pdf
 PDFWordCount, based on `wc`, counts words as sequences of characters separated by spaces or punctuation.
 
 It filters in only strings starting with a letter, in order to avoid inflating the count with for instance tables containing many numbers.
-
-
-
-
