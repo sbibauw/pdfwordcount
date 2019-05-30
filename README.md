@@ -1,4 +1,4 @@
-# PDFWordCount
+# pdfwordcount
 
 Extremely basic shell wrapper around `pdftotext` and `wc` to get an approximate word count for a PDF file.
 
@@ -15,11 +15,9 @@ brew install pdfwordcount
 
 ### Manual installation
 
-Install required dependencies:
+Install required dependency:
 
 - `pdftotext`, available from [xpdf](https://www.xpdfreader.com/)
-
-- [Recode](https://github.com/rrthomas/recode)
 
 Clone the repo and copy the binary file to `/usr/local/bin`:
 
@@ -38,6 +36,8 @@ pdfwordcount File.pdf
 
 ## Count logic
 
-PDFWordCount, based on `wc`, counts words as sequences of characters separated by spaces or punctuation.
+`pdfwordcount`, based on `wc`, counts words as sequences of characters separated by spaces or punctuation.
 
 It filters in only strings starting with a letter, in order to avoid inflating the count with for instance tables containing many numbers.
+
+It handles text with special characters by transliterating these to ASCII (e.g., `é` → `e`) internally (via `iconv`) in order to count them appropriately.
